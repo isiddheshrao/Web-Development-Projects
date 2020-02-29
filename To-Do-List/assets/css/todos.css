@@ -1,0 +1,14 @@
+
+/* Main todo div container */
+#container{
+	border: 2px solid gray;
+	margin: 0 auto;
+	width: 360px;
+}
+
+
+/* Adding class to toggle completed to-do's */
+.completed{
+	color: gray;
+	text-decoration: strikethrough;
+}
