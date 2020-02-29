@@ -4,11 +4,11 @@ $("ul").on("click", "li", function(){
 });
 
 //Click X to delete to-do
-$("li").on("click", "span", function(){
+$("ul").on("click", "span", function(event){
 	$(this).parent().fadeOut(500, function(){
 		$(this).remove()
 	});
-	event.propogation();
+	event.stopPropogation();	//stops sequential event execution.
 });
 
 //add new to-do
@@ -18,6 +18,10 @@ $("input[type ='text']").keypress(function(event){
 		var todoText = $(this).val()
 		// the next this referes to the created variable. the upper this refers to input iteration 
 		$(this).val("");
-		$("ul").append("<li><span>X</span>"+todoText+"</li>");
+		$("ul").append("<li><span><i class='fas fa-trash-alt'></i></span>"+todoText+"</li>");
 	}
+});
+
+$(".fa-edit").click(function(){
+	$("input[type ='text']").fadeToggle()
 });
